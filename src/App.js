@@ -1,22 +1,12 @@
 import { useState } from 'react'
-
-
-function useToggle(){
-    const [toggle,setToggle] = useState(false)
-
-    const handleToggle = () => { 
-        setToggle(!toggle)
-    }
-    return [toggle,handleToggle]
-}
+import { Link,useRoutes } from 'react-router-dom'
 
 export default function App() { 
-    const [toggle,handleToggle] = useToggle()
 
     return (
-        <div className="App"> 
-            {toggle && <div>this is div</div>}
-            <button onClick={handleToggle}>Toggle</button>
+        <div> 
+            <Link to="/article">文章</Link>
+            <span className="foo">this is class foo</span>
         </div>
     )
 }
